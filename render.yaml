@@ -1,7 +1,6 @@
 services:
-  - type: web
-    name: fashion-store
-    env: static
+  - type: static
+    name: fashnix-collections
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist/fashion-store
     routes:
