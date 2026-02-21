@@ -34,7 +34,7 @@ export class CheckoutComponent {
 
   initiateRazorpayPayment(user: any, shippingAddress: string) {
     // Create Razorpay order
-    this.http.post<any>('http://localhost:8080/api/payment/create-order', {
+    this.http.post<any>('https://e-commerce-demo-4esx.onrender.com/api/payment/create-order', {
       amount: 37498, // Amount in paise (₹374.98)
       currency: 'INR'
     }).subscribe({
@@ -75,7 +75,7 @@ export class CheckoutComponent {
   }
 
   verifyPayment(response: any, user: any, shippingAddress: string) {
-    this.http.post('http://localhost:8080/api/payment/verify', {
+    this.http.post('https://e-commerce-demo-4esx.onrender.com/api/payment/verify', {
       razorpayOrderId: response.razorpay_order_id,
       razorpayPaymentId: response.razorpay_payment_id,
       razorpaySignature: response.razorpay_signature,
@@ -99,7 +99,7 @@ export class CheckoutComponent {
       paymentMethod: 'cod'
     };
 
-    this.http.post(`http://localhost:8080/api/orders/${user.id}/place`, orderRequest).subscribe({
+    this.http.post(`https://e-commerce-demo-4esx.onrender.com/api/orders/${user.id}/place`, orderRequest).subscribe({
       next: () => {
         alert('Order placed successfully! You will pay on delivery.');
         this.router.navigate(['/user']);

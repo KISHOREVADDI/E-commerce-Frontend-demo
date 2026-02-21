@@ -6,7 +6,7 @@ import { BehaviorSubject, tap } from 'rxjs';
     providedIn: 'root'
 })
 export class AuthService {
-    private apiUrl = 'http://localhost:8080/api/users';
+    private apiUrl = 'https://e-commerce-demo-4esx.onrender.com/api/users';
     private userSubject = new BehaviorSubject<any>(this.getUserFromStorage());
     user$ = this.userSubject.asObservable();
 

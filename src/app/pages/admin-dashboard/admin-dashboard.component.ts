@@ -26,7 +26,7 @@ export class AdminDashboardComponent {
   }
 
   loadProducts() {
-    this.http.get<any[]>('http://localhost:8080/api/products')
+    this.http.get<any[]>('https://e-commerce-demo-4esx.onrender.com/api/products')
       .subscribe(data => this.products = data);
   }
 
@@ -59,7 +59,7 @@ export class AdminDashboardComponent {
       formData.append('files', file);
     }
 
-    this.http.post<string[]>('http://localhost:8080/api/upload', formData).subscribe({
+    this.http.post<string[]>('https://e-commerce-demo-4esx.onrender.com/api/upload', formData).subscribe({
       next: (urls) => {
         if (urls.length > 0) {
           this.newProduct.image = urls[0]; // Main image
@@ -67,7 +67,7 @@ export class AdminDashboardComponent {
         }
 
         // Save Product
-        this.http.post('http://localhost:8080/api/products', this.newProduct)
+        this.http.post('https://e-commerce-demo-4esx.onrender.com/api/products', this.newProduct)
           .subscribe(() => {
             alert('Product added successfully!');
             this.loadProducts();

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class ProductService {
-    private apiUrl = 'http://localhost:8080/api/products';
+    private apiUrl = 'https://e-commerce-demo-4esx.onrender.com/api/products';
 
     constructor(private http: HttpClient) { }
 
@@ -23,7 +23,7 @@ export class ProductService {
     }
 
     // Wishlist API
-    private wishlistUrl = 'http://localhost:8080/api/wishlist';
+    private wishlistUrl = 'https://e-commerce-demo-4esx.onrender.com/api/wishlist';
 
     getWishlist(userId: number): Observable<any[]> {
         return this.http.get<any[]>(`${this.wishlistUrl}/${userId}`);

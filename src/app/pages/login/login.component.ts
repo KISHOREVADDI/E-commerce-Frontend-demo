@@ -14,7 +14,7 @@ export class LoginComponent {
   constructor(private http: HttpClient, private router: Router, private authService: AuthService) { }
 
   onLogin() {
-    this.http.post('http://localhost:8080/api/auth/login', this.loginData).subscribe({
+    this.http.post('https://e-commerce-demo-4esx.onrender.com/api/auth/login', this.loginData).subscribe({
       next: (response: any) => {
         console.log('Login successful', response);
         // Use AuthService to log in

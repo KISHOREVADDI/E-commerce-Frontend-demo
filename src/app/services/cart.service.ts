@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class CartService {
-    private apiUrl = 'http://localhost:8080/api/cart';
+    private apiUrl = 'https://e-commerce-demo-4esx.onrender.com/api/cart';
     private cartSubject = new BehaviorSubject<any>(null);
     cart$ = this.cartSubject.asObservable();
 

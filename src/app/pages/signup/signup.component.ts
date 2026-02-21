@@ -20,7 +20,7 @@ export class SignupComponent {
   constructor(private http: HttpClient, private router: Router) { }
 
   onSignup() {
-    this.http.post('http://localhost:8080/api/auth/signup', this.signupData).subscribe({
+    this.http.post('https://e-commerce-demo-4esx.onrender.com/api/auth/signup', this.signupData).subscribe({
       next: (response: any) => {
         console.log('Signup successful', response);
         // Login immediately after signup (or redirect to login)

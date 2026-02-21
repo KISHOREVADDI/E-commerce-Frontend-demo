@@ -21,7 +21,7 @@ export class OrderDetailComponent implements OnInit {
   }
 
   fetchOrder(id: number) {
-    this.http.get(`http://localhost:8080/api/orders/detail/${id}`).subscribe({
+    this.http.get(`https://e-commerce-demo-4esx.onrender.com/api/orders/detail/${id}`).subscribe({
       next: (data) => {
         this.order = data;
         this.isLoading = false;

@@ -33,7 +33,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
   loadOrders() {
-    this.http.get<any[]>(`http://localhost:8080/api/orders/${this.user.id}`)
+    this.http.get<any[]>(`https://e-commerce-demo-4esx.onrender.com/api/orders/${this.user.id}`)
       .subscribe({
         next: (data) => this.orders = data,
         error: (err) => console.error('Failed to fetch orders', err)
